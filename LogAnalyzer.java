@@ -9,9 +9,16 @@
  * 
  * 3) private boolean[] vacant;
  * 
- * 4) 
+ * 4) Used in analyzeHourlyData() and printHourlyCounts()
  * 
+ * 5) int[] counts;
+ *    occupied = new boolean[5000];
  * 
+ * 6) readings = new double[60];
+ *    urls = new String[90];
+ *    machine = new TicketMachine[5];
+ * 
+ * 7) 21 String objects
  * 
  * 
  * 
