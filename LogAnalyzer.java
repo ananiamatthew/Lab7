@@ -5,16 +5,11 @@
  * 
  * 1) Busiest time is 6pm
  * 
+ * 2) private Person[] people;
  * 
+ * 3) private boolean[] vacant;
  * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+ * 4) 
  * 
  * 
  * 
