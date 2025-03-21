@@ -23,7 +23,27 @@
  * 8) Parentheses should be brackets instead
  *    double[] prices = new double[50];
  * 
- * 9) 
+ * 9) It causes an out-of-bounds error
+ * 
+ * 11) public void printGreater(double marks, double mean) {
+           for(index = 0; index < marks.length; index++) {
+               if(marks[index] > mean) {
+               System.out.println(marks[index]);
+               }
+           }
+       }
+ * 
+ * 13) public int numberOfAccesses() {
+           int total = 0;
+           for (int i = 0; i < hourCounts.length; i++) {
+               total = total + hourCounts[i];
+           }
+           return total;
+       } 
+ * 
+ * 15 DOES NOT WORK???
+ * 
+ * 
  * 
  * 
  * 
@@ -49,6 +69,18 @@ public class LogAnalyzer
         // Create the reader to obtain the data.
         reader = new LogfileReader();
     }
+    
+    /**
+     * Create an object to analyze hourly web accesses from a file.
+     */
+    public LogAnalyzer(String filename)
+    { 
+        // Create the array object to hold the hourly
+        // access counts.
+        hourCounts = new int[24];
+        // Create the reader to obtain the data.
+        reader = new LogfileReader(filename);
+    }
 
     /**
      * Analyze the hourly access data from the log file.
@@ -70,8 +102,10 @@ public class LogAnalyzer
     public void printHourlyCounts()
     {
         System.out.println("Hr: Count");
-        for(int hour = 0; hour < hourCounts.length; hour++) {
+        int hour = 0;
+        while (hour < hourCounts.length) {
             System.out.println(hour + ": " + hourCounts[hour]);
+            hour++;
         }
     }
     
@@ -81,5 +115,25 @@ public class LogAnalyzer
     public void printData()
     {
         reader.printData();
+    }
+    
+    public int numberOfAccesses() {
+        int total = 0;
+        for (int i = 0; i < hourCounts.length; i++) {
+            total = total + hourCounts[i];
+        }
+        return total;
+       }
+    
+    public int busiestHour() {
+        int hourval = hourCounts[0];
+        int hour = 0;
+        for (int i = 0; i < hourCounts.length; i++) {
+            if (hourval > hourCounts[i]) {
+                hourval = hourCounts[i];
+                hour = i;
+            }
+        }
+        return hour;
     }
 }
