@@ -20,7 +20,10 @@
  * 
  * 7) 21 String objects
  * 
+ * 8) Parentheses should be brackets instead
+ *    double[] prices = new double[50];
  * 
+ * 9) 
  * 
  * 
  * 
